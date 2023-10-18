@@ -1,0 +1,14 @@
+<!-- select_pair.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.teacher_student_pair.label_tag }}
+    {{ form.teacher_student_pair }}
+    <input type="submit" value="Generate Certificate">
+</form>
+
+<!-- List all available pairs -->
+<ul>
+    {% for pair in teacher_student_pairs %}
+        <li>{{ pair.teacher.name }} - {{ pair.student.name }}</li>
+    {% endfor %}
+</ul>

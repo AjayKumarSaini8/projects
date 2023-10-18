@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="{% url 'teachers-for-student' student.id %}">{{ student.name }}</a>
+                <a href="{% url 'select_pair' %}" class="btn btn-primary">Generate Certificate</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
